@@ -28,10 +28,20 @@ public:
 	int  MyStrCmp(const MyString& b) const;
 
 	MyString operator+(const MyString& b) const;
+	MyString operator+(char c) const; //obj + 'A'
+	MyString operator+(int n) const;//obj + 10
 	MyString& operator+=(const MyString& b);
+	MyString& operator++(); //++ob
+	MyString operator++(int); //ob++
+
 	char& operator[](int index);
 	const char& operator[](int index) const;
+	void operator()();
 
+	int GetLength() const;
+	const char* GetStr() const;
 	static int GetCount();
 };
+MyString operator+(char c, const MyString& obj);//'A' + obj
+MyString operator+ (int n, const MyString& obj);//10 + obj
 

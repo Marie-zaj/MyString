@@ -45,7 +45,7 @@ int main()
 	c[0] = 'X';
 	cout << "c[0] after: " << c[0] << endl;
 
-	cout << "\n\nTesting MyStrcpy():\n";
+	cout << "\nTesting MyStcpy():\n";
 	MyString src("CopiedText");
 	MyString dest;
 	dest.MyStrcpy(src);
@@ -53,19 +53,52 @@ int main()
 	src.Output();
 	cout << "\nDestination after MyStrcpy: ";
 	dest.Output();
-	cout << endl;
 
 	cout << "\nTesting operator= :\n";
 	MyString x("AssignMe");
 	MyString y;
-	y = x;  // operator= is called here
+	y = x;
 	cout << "y after assignment: ";
 	y.Output();
-	cout << endl;
 
-	cout << "\nTotal created objects: "
-		<< MyString::GetCount()
-		<< endl;
+	cout << "\nTesting operator():\n";
+	MyString p;
+	cout << "Enter new value for p: ";
+	p();
+	cout << "You entered: ";
+	p.Output();
+	
+	cout << "\nTesting obj + 'A'\n";
+	MyString s1("Test");
+	MyString s2 = s1 + 'A';
+	cout << "Test + 'A' = ";
+	s2.Output();
+
+	cout << "\nTesting 'A' + obj:\n";
+	MyString s3 = 'A' + s1;
+	cout << "'A' + Test = ";
+	s3.Output();
+
+	cout << "\nTesting obj + 10:\n";
+	MyString s4 = s1 + 10;
+	cout << "Test + 10 = ";
+	s4.Output();
+
+	cout << "\nTesting 10 + obj\n";
+	MyString s5 = 10 + s1;
+	cout << "10 + Test = ";
+	s5.Output();
+
+	cout << "\nTesting postfix obj++ append\n";
+	MyString s6("Plus");
+	s6++;
+	cout << "After s6++: ";
+	s6.Output();
+
+	cout << "\nTesting prefix ++obj append\n";
+	++s6;
+	cout << "After ++s6: ";
+	s6.Output();
 
 	return 0;
 }
