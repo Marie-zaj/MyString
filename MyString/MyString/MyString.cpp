@@ -326,3 +326,19 @@ MyString operator+(int n, const MyString& obj)
 
 	return result;
 }
+
+ostream& operator<<(ostream& out, const MyString& obj)
+{
+	out << obj.GetStr();
+	return out;
+}
+
+istream& operator>>(istream& in, MyString& obj)
+{
+	char buffer[1024];
+	in.getline(buffer, 1024);
+
+	obj = MyString(buffer);
+
+	return in;
+}

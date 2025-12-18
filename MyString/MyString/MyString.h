@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <string>
+using namespace std;
 class MyString
 {
 	char* str;
@@ -45,3 +46,5 @@ public:
 MyString operator+(char c, const MyString& obj);//'A' + obj
 MyString operator+ (int n, const MyString& obj);//10 + obj
 
+ostream& operator<<(ostream& out, const MyString& obj);
+istream& operator>>(istream& in, MyString& obj);

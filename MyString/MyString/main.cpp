@@ -100,5 +100,15 @@ int main()
 	cout << "After ++s6: ";
 	s6.Output();
 
+	cout << "\nTesting operator << :\n";
+	MyString t1("StreamTest");
+	cout << t1 << endl;
+
+	cout << "\nTesting operator >> :\n";
+	MyString t2;
+	cout << "Enter string: ";
+	cin >> t2;
+	cout << "You entered: " << t2 << endl;
+
 	return 0;
 }
